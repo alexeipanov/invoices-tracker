@@ -1,6 +1,8 @@
-<h2>Edit Invoice</h2>
-<form>
-  <Input @value={{this.invoice.date}} type="date" />
-  <Input @value={{this.invoice.amount}} placeholder="1045" />
-  <LinkTo @route="invoices">OK</LinkTo>
-</form>
+<div class="container">
+  <h2>Edit Invoice</h2>
+  <form>
+    <Input @value={{this.invoice.date}} type="date" />
+    <Input @value={{this.invoice.amount}} placeholder="1045" />
+    <LinkTo @route="invoices">OK</LinkTo>
+  </form>
+</div>

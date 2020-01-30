@@ -1,17 +1,23 @@
-<h1>Invoices list</h1>
-<LinkTo @route="new">New Invoice</LinkTo>
-<span>Filter by date after</span>
-<Input @value={{this.startDate}} type="date" />
-<div class="header">
-  <div>Date</div>
-  <div>Amount</div>
-  <div>Actions</div>
-</div>
-{{#each this.filtered as |invoice index|}}
-  <div class="row">
-    <div>{{invoice.formattedDate}}</div>
-    <div>{{invoice.amount}}</div>
-    <div><LinkTo @route="edit" @model={{index}}>Edit</LinkTo> | <a href="#" {{action "delete" invoice}}>Delete</a></div>
+<div class="container">
+  <h1>Invoices list</h1>
+
+  <div>
+    <LinkTo @route="new">New Invoice</LinkTo>
+    <span>Filter by date after</span>
+    <Input @value={{this.startDate}} type="date" />
   </div>
-{{/each}}
-<h4>Total amount: {{this.total}}</h4>
+
+  <div class="header">
+    <div>Date</div>
+    <div>Amount</div>
+    <div>Actions</div>
+  </div>
+  {{#each this.filtered as |invoice index|}}
+    <div class="row">
+      <div>{{invoice.formattedDate}}</div>
+      <div>{{invoice.amount}}</div>
+      <div><LinkTo @route="edit" @model={{index}}>Edit</LinkTo> | <a href="#" {{action "delete" invoice}}>Delete</a></div>
+    </div>
+  {{/each}}
+  <h4>Total amount: {{this.total}}</h4>
+</div>

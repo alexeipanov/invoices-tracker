@@ -4,6 +4,7 @@ import { tracked } from '@glimmer/tracking';
 import { computed } from '@ember/object';
 
 export default Component.extend({
+  tagName: '',
   startDate: '2020-01-01',
 
   @computed('invoices.[]', 'startDate')
